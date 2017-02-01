@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Paint.io</title>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="img/favicon.png"/>
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"/>
+    <link rel="stylesheet" href="ico/css/font-awesome.min.css">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+    <!-- Nav -->
+    <nav class="custom">
+        <div class="nav-wrapper centering">
+            <span class="brand-logo">Paint.io</span>
+            <ul class="right hide-on-med-and-down naving">
+                <li class="active"><a class="select waves-effect" data-type="brush"><i class="material-icons">brush</i></a></li>
+                <li><a class="select waves-effect" data-type="line"><i class="material-icons">linear_scale</i></a></li>
+
+                <li ><a class="select waves-effect" data-type="rec"><i class="fa fa-square-o fa-2x" aria-hidden="true"></i></a></li>
+                <!-- <li><a class="select waves-effect" data-type="rec"><i class="material-icons">border_style</i></a></li> -->
+                <li><a class="select waves-effect" data-type="cer"><i class="material-icons">panorama_fish_eye</i></a></li>
+                <li ><a id="eraser" class="waves-effect"><i class="fa fa-eraser fa-2x" aria-hidden="true"></i></a></li>
+                <li><a class="dropdown-button waves-effect" data-activates="dropdown" data-beloworigin="true">Option<i class="material-icons right ar">arrow_drop_down</i></a></li>
+                <li class="color_input">
+                    <input id="fuckingshit" type="color" value="#353535" name="fuckingshit">
+                </li>
+                <li class="input_txt">
+                    <input type="text" placeholder="rgba(127,0,0,0.5)" id="rgb" class="filled-in">
+                </li>
+                <li>
+                    <a class="btn-floating waves-effect" id="dl" download="art.png">
+                        <i class="fa fa-cloud-download cen" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li>
+
+                    <div class="file-field input-field">
+                        <div class="btn-floating  waves-effect">
+                            <i class="fa fa-cloud-upload cen" aria-hidden="true"></i>
+                            <input type='file' id="imgupload" accept="image/*"/>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a class="btn-floating waves-effect" id="jsonDl" download="calque.json">
+                        <i class="fa fa-files-o cen" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="btn-floating waves-effect" id="clear" download="art.png">
+                        <i class="fa fa-trash cen" aria-hidden="true"></i>
+                    </a>
+                </li>
+            </ul>
+            <ul id="dropdown" class="dropdown-content">
+
+                <li>
+                    <p>
+                        <input id="stroke" type="checkbox" class="draw_type filled-in">
+                        <label for="stroke">Trait</label>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <input id="fill" type="checkbox" class="draw_type filled-in">
+                        <label for="fill">Remplis</label>
+                    </p>
+                </li>
+                <li>
+                    <p class="range-field">
+                        <input id="range" value="19" type="range">
+                    </p>
+                </li>
+                <li><p class="waves-effect sym" data-sym="hor">
+                    <label>Symetrie Horizon</label>
+                </p></li>
+                <li><p class="waves-effect sym" data-sym="ver">
+                    <label>Symetrie vertical</label>
+                </p></li>
+                <li>
+
+<table id="colorpicking">
+<tbody>
+        <tr>
+            <td class="color_td" style="background:#FF7C00" data-color='#FF7C00'></td>
+            <td class="color_td" style="background:#29D5D3" data-color='#29D5D3'></td>
+            <td class="color_td" style="background:#D727C1" data-color='#D727C1'></td>
+            <td class="color_td" style="background:#00FF3C" data-color='#00FF3C'></td>
+            <td class="color_td" style="background:#B6FF00" data-color='#119FED'></td>
+            <td class="color_td" style="background:#FFEF00" data-color='#FFEF00'></td>
+            <td class="color_td" style="background:#48DE82" data-color='#48DE82'></td>
+            <td class="color_td" style="background:#7428D6" data-color='#7428D6'></td>
+            <td class="color_td" style="background:#DE3320" data-color='#DE3320'></td>
+            <td class="color_td" style="background:#6D6D6D" data-color='#6D6D6D'></td>
+            <td class="color_td" style="background:#7F6F05" data-color='#7F6F05'></td>
+            <td class="color_td" style="background:#FFA166" data-color='#FFA166'></td>
+        </tr>
+        <tr>
+            <td class="color_td" style="background:#330000" data-color='#330000'></td>
+            <td class="color_td" style="background:#331900" data-color='#331900'></td>
+            <td class="color_td" style="background:#333300" data-color='#333300'></td>
+            <td class="color_td" style="background:#193300" data-color='#193300'></td>
+            <td class="color_td" style="background:#003300" data-color='#003300'></td>
+            <td class="color_td" style="background:#003319" data-color='#003319'></td>
+            <td class="color_td" style="background:#003333" data-color='#003333'></td>
+            <td class="color_td" style="background:#001933" data-color='#001933'></td>
+            <td class="color_td" style="background:#000033" data-color='#000033'></td>
+            <td class="color_td" style="background:#190033" data-color='#190033'></td>
+            <td class="color_td" style="background:#330033" data-color='#330033'></td>
+            <td class="color_td" style="background:#000000" data-color='#000000'></td>
+        </tr>
+        <tr>
+            <td class="color_td" style="background:#660000" data-color='#660000'></td>
+            <td class="color_td" style="background:#663300" data-color='#663300'></td>
+            <td class="color_td" style="background:#666600" data-color='#666600'></td>
+            <td class="color_td" style="background:#336600" data-color='#336600'></td>
+            <td class="color_td" style="background:#006600" data-color='#006600'></td>
+            <td class="color_td" style="background:#006633" data-color='#006633'></td>
+            <td class="color_td" style="background:#006666" data-color='#006666'></td>
+            <td class="color_td" style="background:#003366" data-color='#003366'></td>
+            <td class="color_td" style="background:#000066" data-color='#000066'></td>
+            <td class="color_td" style="background:#330066" data-color='#330066'></td>
+            <td class="color_td" style="background:#660066" data-color='#660066'></td>
+            <td class="color_td" style="background:#202020" data-color='#202020'></td>
+        </tr>
+        <tr>
+            <td class="color_td" style="background:#990000" data-color='#990000'></td>
+            <td class="color_td" style="background:#994C00" data-color='#994C00'></td>
+            <td class="color_td" style="background:#999900" data-color='#999900'></td>
+            <td class="color_td" style="background:#4C9900" data-color='#4C9900'></td>
+            <td class="color_td" style="background:#009900" data-color='#009900'></td>
+            <td class="color_td" style="background:#00994C" data-color='#00994C'></td>
+            <td class="color_td" style="background:#009999" data-color='#009999'></td>
+            <td class="color_td" style="background:#004C99" data-color='#004C99'></td>
+            <td class="color_td" style="background:#000099" data-color='#000099'></td>
+            <td class="color_td" style="background:#4C0099" data-color='#4C0099'></td>
+            <td class="color_td" style="background:#990099" data-color='#990099'></td>
+            <td class="color_td" style="background:#404040" data-color='#404040'></td>
+        </tr>
+        <tr>
+            <td class="color_td" style="background:#CC0000" data-color='#CC0000'></td>
+            <td class="color_td" style="background:#CC6600" data-color='#CC6600'></td>
+            <td class="color_td" style="background:#CCCC00" data-color='#CCCC00'></td>
+            <td class="color_td" style="background:#66CC00" data-color='#66CC00'></td>
+            <td class="color_td" style="background:#00CC00" data-color='#00CC00'></td>
+            <td class="color_td" style="background:#00CC66" data-color='#00CC66'></td>
+            <td class="color_td" style="background:#00CCCC" data-color='#00CCCC'></td>
+            <td class="color_td" style="background:#0066CC" data-color='#0066CC'></td>
+            <td class="color_td" style="background:#0000CC" data-color='#0000CC'></td>
+            <td class="color_td" style="background:#6600CC" data-color='#6600CC'></td>
+            <td class="color_td" style="background:#CC00CC" data-color='#CC00CC'></td>
+            <td class="color_td" style="background:#606060" data-color='#606060'></td>
+        </tr>
+        <tr>
+            <td class="color_td" style="background:#FF0000" data-color='#FF0000'></td>
+            <td class="color_td" style="background:#FF8000" data-color='#FF8000'></td>
+            <td class="color_td" style="background:#FFFF00" data-color='#FFFF00'></td>
+            <td class="color_td" style="background:#80FF00" data-color='#80FF00'></td>
+            <td class="color_td" style="background:#00FF00" data-color='#00FF00'></td>
+            <td class="color_td" style="background:#00FF80" data-color='#00FF80'></td>
+            <td class="color_td" style="background:#00FFFF" data-color='#00FFFF'></td>
+            <td class="color_td" style="background:#0080FF" data-color='#0080FF'></td>
+            <td class="color_td" style="background:#0000FF" data-color='#0000FF'></td>
+            <td class="color_td" style="background:#7F00FF" data-color='#7F00FF'></td>
+            <td class="color_td" style="background:#FF00FF" data-color='#FF00FF'></td>
+            <td class="color_td" style="background:#808080" data-color='#808080'></td>
+        </tr>
+    </tbody>
+    </table>
+
+
+
+        </li>
+    </ul>
+
+
+    <ul id="nav-mobile" class="side-nav">
+
+        <li class="select" data-type="brush"><i class="sid-i material-icons">brush</i></li>
+        <li class="select" data-type="line"><i class="sid-i material-icons">linear_scale</i></li>
+        <li class="select" data-type="rec"><i class="sid-i material-icons">border_style</i></li>
+        <li class="select" data-type="cer"><i class="sid-i material-icons">panorama_fish_eye</i></li>
+    </ul>
+    <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="fa fa-sliders" aria-hidden="true"></i>
+    </a>
+</div>
+</nav>
+<!-- BODY -->
+
+<br>
+<main>
+    <div id="zone" class="style_p">
+        <canvas id="canvas_1"></canvas>
+    </div>
+</main>
+
+
+
+
+<footer class="page-footer">
+          <div class="container">
+            <div class="row">
+            <div id="d_more">
+                <span id="more">+</span>     
+            </div>
+
+                <ul id="calque">
+                    <li class="calque_li" data-nb="1"><span>calque 1 </span>
+                        <i class="material-icons icon_vi">visibility_off</i>
+                        <i class="fa fa-arrow-left undo" aria-hidden="true"></i>
+                        <i class="fa fa-arrow-right redo" aria-hidden="true"></i>
+                    </li>
+                </ul>
+              </div>
+            </div>
+        </footer>
+<!-- BODY -->
+
+<!--  Scripts-->
+<!-- <div class="hiddendiv common"></div><div class="drag-target" style="left: 0px;"></div> -->
+<script type="text/javascript" src="js/materialize.min.js"></script> 
+<script type="text/javascript" src="js/slide.js"></script>
+<script src="js/paint.js" type="text/javascript"></script>
+</body>
+</html>

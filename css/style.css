@@ -1,0 +1,283 @@
+@font-face {
+	font-family: sketch;
+	src: url("../fonts/Sketch_Block.ttf");
+}
+
+html, body {
+/*	width: 100%;
+height: 100%;*/
+margin: 0px;
+border: 0;
+}
+
+
+body {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+	font-family: sketch;
+	/*background-color: #bdc3c7;*/
+	background: url("../img/parchemin.jpg") no-repeat center fixed;
+	background-size: cover;
+}
+main {
+	margin-top: 30px;
+	flex: 1 0 auto;
+}
+.custom {
+	background-color: rgba(1, 1, 1, 0.4) !important;
+}
+
+.sid-i {
+	transition-duration: 0.4s;
+	cursor: pointer;
+	color: #303030;
+}
+.sid-i:hover {
+	transition-duration: 0.4s;
+	background-color: grey;
+}
+.side-nav {
+	text-align: center;
+	width: 50px;
+	transform: translateX(-100%);
+}
+#zone {
+	background-color: rgba(255,255,255,0.4);
+	width: 800px;
+	height: 420px;
+	cursor: url("../img/paint-brush.png"), default;
+}
+
+#zone_sym {
+	background-color: rgba(255,255,255,0.4);
+	cursor: crosshair;
+}
+
+canvas {
+	position: absolute;
+	width: 800px;
+	height: 420px;
+}
+
+
+.ar {
+	margin-left: 0px !important
+}
+
+#dropdown {
+	width: 148.25px !important;
+	overflow: scroll !important; 
+	padding: 4px;
+	background-color: #EFEFEF;
+}
+
+#color {
+	width: 40px;
+	border : none;
+}
+
+.naving, .naving li{
+	height: 100%;
+}
+
+
+nav ul li.active {
+	background-color: rgba(255,0,0,0.4);
+}
+
+.active_erase {
+	background-color: rgba(219,0,0,0.8);
+}
+.active_sym {
+	background-color: rgba(122, 204, 116, 0.8);
+}
+
+.fa {
+	display: block;
+}
+.input_txt {
+	width: 120px !important;
+}
+
+#rgb {
+	height: 2rem !important;
+}
+
+.cen {
+	line-height: 0px !important;
+}
+
+.btn-floating {
+	line-height: 42px !important;
+}
+.centering {
+	margin: 0 40px;
+}
+
+.ico_sym {
+	display: block;
+	width: 50px;
+	height: 50px;
+	background-image: url('../img/sym.png');
+	background-attachment: fixed;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+}
+
+#dropdown {
+	overflow: hidden;
+}
+
+
+.hor_in {
+	width: 800px;
+	height: 420px;
+	margin: 0px auto;
+	display: inline-block;
+}
+
+.ver {
+    -webkit-transform: rotateY( 0deg ) rotateX( 180deg );
+    -ms-transform: rotateY( 0deg ) rotateX( 180deg );
+    transform: rotateY( 0deg ) rotateX( 180deg );
+	width: 800px;
+	height: 420px;
+	margin: 0px auto;
+	display: block;
+}
+
+.hor {
+    -webkit-transform: rotateY( 180deg ) rotateX( 0deg );
+    -ms-transform: rotateY( 180deg ) rotateX( 0deg );
+    transform: rotateY( 180deg ) rotateX( 0deg );
+	width: 800px;
+	height: 420px;
+	margin: 0px auto;
+	display: inline-block;
+
+}
+
+.style_p {
+	width: 800px;
+	height: 420px;
+	margin: 0px auto;
+	display: block;
+}
+
+
+nav .brand-logo {
+	font-size: 2.8rem !important;
+}
+
+.btn-floating {
+	background-color: rgba(255,255,255,1.0) !important;
+
+}
+
+.btn-floating i {
+	color: #474747;
+}
+
+.color_input {
+	margin: 5px;
+}
+
+#fuckingshit {
+	border: none;
+	padding: 0px;
+	width: 40px;
+}
+
+
+
+.color_td {
+	display: inline-block;
+	width: 20px !important;	
+	height: 18px !important;
+	background-color: blue;
+}
+
+
+#colorpicking td {
+	padding: 0px 0px !important;
+}
+
+#colorpicking {
+	border-spacing: 0;
+}
+
+footer {
+	background-color: rgba(1, 1, 1, 0.4) !important;
+}
+
+#calque li {
+	position: relative;
+	background-color: rgba(255,255,255,0.4);
+	width: 115.2px;
+	height: 60.48px;
+	display: inline-block;
+	margin: 6px;
+}
+
+#d_more {
+	position: absolute;
+}
+
+#more {
+	background-color: transparent;
+	cursor: pointer;
+	font-family: arial;
+	font-weight: bold;
+	font-size: 30px;
+	position: relative;
+	top: -39px;
+	color: white;
+
+}
+
+.cur_calque {
+	box-shadow: 5px 4px 6px rgba(0,0,0,0.7);
+}
+
+.icon_vi {
+	cursor: pointer;
+	position: absolute;
+	right: 4px;
+}
+
+.undo {
+	cursor: pointer;
+	color: #303030;
+	position: absolute;
+	bottom: 7px;
+	left: 7px;
+}
+
+.redo {
+	cursor: pointer;
+	color: #303030;
+	position: absolute;
+	bottom: 7px;
+	right: 7px;
+}
+
+.hidenn {
+	color: #D10000;
+}
+
+#nav-mobile {
+	background-color: rgb(45, 45, 45);
+}
+
+#nav-mobile i {
+	color: white;
+}
+
+.brand-logo {
+	cursor: pointer;
+}
+.onlive {
+	color: #267F00 !important;
+	text-shadow: 0px 0px 6px white;
+}
